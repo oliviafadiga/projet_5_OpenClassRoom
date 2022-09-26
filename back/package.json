@@ -1,0 +1,20 @@
+{
+  "name": "kanap-back",
+  "version": "1.0.0",
+  "description": "un projet de openclassrooms sur le js",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "of",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1",
+    "uuid": "^3.3.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "\u0016https://github.com/OpenClassrooms-Student-Center/P5-Dev-Web-Kanap.git"
+  }
+}
