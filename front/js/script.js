@@ -1,15 +1,15 @@
 //------------------------------------------------------------------------
-// Récupération des produits sur l'api
+// Récupération des produits sur l'api avec un fetch
 //------------------------------------------------------------------------ 
 fetch("http://localhost:3000/api/products")
-  // quand tu as la réponse donne le résultat en json
+  // quand tu as la promese donne le résultat en json
   .then((res) => res.json())
   // ce que l'on a reçu en json sera appelé objetProduits
   .then((objetProduits) => {
-    // les informations en console sous forme de tableau
+    // Informations en console sous forme de tableau
     console.table(objetProduits);
     // appel de la fonction d'affichage des produits
-    AffichagelesKanaps(objetProduits);
+    AffichagedesKanaps(objetProduits);
   })
   // dans le cas d'une erreur remplace le contenu h1 par erreur 404 et renvoit en console l'erreur.
   .catch((err) => {
@@ -19,7 +19,7 @@ fetch("http://localhost:3000/api/products")
 //----------------------------------------------------------------------
 // fonction d'affichage des produits de l'api sur la page index
 //----------------------------------------------------------------------
-function AffichagelesKanaps(index)
+function AffichagedesKanaps(index)
 {
  // déclaration de variable de la zone d'article
  let zoneArticle = document.querySelector("#items");
