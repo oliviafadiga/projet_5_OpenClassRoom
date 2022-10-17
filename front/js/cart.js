@@ -84,8 +84,7 @@ function affiche(indexé) {
     </div>
   </article>`
     )
-    .join(""); //on remplace les virgules de jonctions des objets du tableau par un vide
-  // reste à l'écoute des modifications de quantité pour l'affichage et actualiser les données
+    .join("");
   totalProduit();
 }
 //--------------------------------------------------------------
@@ -159,9 +158,8 @@ function suppression() {
 // fonction ajout nombre total produit et coût total
 //--------------------------------------------------------------
 function totalProduit() {
-  // déclaration variable en tant que nombre
+  // déclaration des variables qui vont contenir des nums
   let totalArticle = 0;
-  // déclaration variable en tant que nombre
   let totalPrix = 0;
   // on pointe l'élément
   const cart = document.querySelectorAll(".cart__item");
@@ -316,8 +314,7 @@ if (page.match("cart")) {
         "Caratères acceptés pour ce champ. Forme email pas encore valide";
       document.querySelector("#emailErrorMsg").style.color = "white";
     } else {
-      document.querySelector("#emailErrorMsg").innerHTML =
-        "Forme email valide.";
+      document.querySelector("#emailErrorMsg").innerHTML = "";
       document.querySelector("#emailErrorMsg").style.color = "white";
     }
   });
@@ -338,10 +335,12 @@ function texteInfo(regex, pointage, zoneEcoute) {
           "Vous devez renseigner tous les champs.";
         // si valeur n'est plus un string vide et la regex différante de 0 (regex à -1 et le champ n'est pas vide donc il y a une erreur)
       } else if (valeur !== "" && index != 0) {
-        document.querySelector(pointage).innerHTML = "Reformulez cette donnée";
+        document.querySelector(pointage).innerHTML =
+          "Veuillez reformulez cette entrée";
         // pour le reste des cas (quand la regex ne décèle aucune erreur et est à 0 peu importe le champ vu qu'il est validé par la regex)
       } else {
-        document.querySelector(pointage).innerHTML = "Entrée valide.";
+        document.querySelector(pointage).innerHTML = "";
+        document.querySelector(pointage).style.color = "white";
       }
     });
   }
